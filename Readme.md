@@ -62,7 +62,7 @@ Ticket Tracker Application is web based App made of using Java, with MVC Archite
 ### HOME- Page
 
 Home Screen
-![Home screen](TicketTrackerApplication/ReadmeImages/table.png)
+![Home screen](ReadmeImages/table.png)
 
 
 ### CREATE NEW TICKET- Page
