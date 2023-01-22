@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Ticket Tracker Application</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md bg-primary navbar-dark">
+		<!-- Brand -->
+
+
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+	</nav>
+
+	<div class="container">
+		<div class="card"
+			style="width: 35rem; margin:5rem auto; background-color: #f2f1fb; box-shadow: 2px 3px 3px 4px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);">
+			<div class="card-body" style="text-align: left;">
+				<h5 class="card-title" style="text-align: center; font-size: 3rem; font-weight: 600;">Ticket Details
+				</h5>
+				<div class="container" style=" background-color: white;">
+					<div class="row" th:object="${ticket}">
+						<div class="col" style="font-size:1.3rem; font-weight: 600; margin: 1rem 0;">Ticket Title</div>
+						<div class="col" th:text="*{title}"
+							style="font-size:1.2rem; font-weight: 600; margin: 1rem 0; color: darkgrey;"></div>
+						<div class="w-100"></div>
+						<div class="col" style="font-size:1.3rem; font-weight: 600; margin: 1rem 0;">Ticket short
+							Description</div>
+						<div class="col" th:text="*{sortDescription}"
+							style="font-size:1.2rem; font-weight: 600; margin: 1rem 0; color: darkgrey;"></div>
+						<div class="w-100"></div>
+						<div class="col" style="font-size:1.3rem; font-weight: 600; margin: 1rem 0;">Ticket Created On
+						</div>
+						<div class="col" th:text="*{#dates.format(created_date, 'dd-MM-yyyy')}"
+							style="font-size:1.2rem; font-weight: 600; margin: 1rem 0; color: darkgrey;"></div>
+						<div class="w-100"></div>
+						<div class="col" style="font-size:1.3rem; font-weight: 600; margin: 1rem 0;">Content</div>
+						<div class="col" style="font-size:1.2rem; font-weight: 600; margin: 1rem 0; color: darkgrey;">
+							[(*{content})]</div>
+					</div>
+				</div>
+				<a th:href=@{/search?query=} class="btn btn-danger" style="float: right;">
+					Close
+				</a>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
